@@ -1,0 +1,12 @@
+body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+.separ1 {
+    background: linear-gradient(90deg, #008a7e, #04c4b4, #ffffff, #04c4b4) !important;
+}
+
+.separ2 {
+    background: linear-gradient(90deg, #04c4b4, #ffffff, #04c4b4, #008a7e) !important;
+}
