@@ -6,13 +6,13 @@ const INFOS = {
     },
     contact: {
         address: {
-            number: "00",
-            streetName: "Nom de Rue",
+            number: "14",
+            streetName: "Avenue de Malherbe",
             zipCode: "38 100",
             city: "Grenoble",
         },
-        phon: "+334 10 02 30 04",
-        mail: "email@email.com",
+        phon: "+336 18 72 06 31",
+        mail: "jeanpaullemonias@gmail.com",
     },
     aboutMe: [
         [
