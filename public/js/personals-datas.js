@@ -35,7 +35,7 @@ const INFOS = {
             city: "Grenoble (38)",
             learning: [
                 {
-                    dates: "Xxxx 0000 - Yyyy 0000",
+                    dates: "décembre 2021 - mai 2023",
                     degree: "RNCP Nv5 technicien développeur.",
                     Languages: [
                         '<i class="fa-brands fa-java"></i>',
