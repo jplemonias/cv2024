@@ -25,6 +25,16 @@ p {
 ol {
     padding-inline-start: 1rem;
 }
+
+#pp {
+    border-radius: 0 40px 0 0;
+}
+
+.transparent {
+    color: transparent;
+}
+
+
 .visibilityHidden {
     visibility: hidden;
 }

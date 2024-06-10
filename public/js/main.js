@@ -6,6 +6,36 @@ function addContentNewElement(e, content) {
     return e.innerHTML = content;
 };
 
+function addPaddingJob(e) {
+    e.style.padding = "10px 0"
+};
+function addPaddingLearn(e) {
+    e.style.padding = "5px 0"
+};
+
+function creatContentOneLearning(e, new_id) {
+    e.id = `learn_${new_id}`;
+    e.classList.add("margin-3pxt-3pxb");
+    e.classList.add("breakForPrint");
+    addPaddingLearn(e);
+}
+
+function creatContentOneJob(e, new_id) {
+    e.id = `job_${new_id}`;
+    e.classList.add("breakForPrint");
+    addPaddingJob(e);
+}
+
+function creatTitleH4(e, new_id, prefix) {
+    e.id = `${prefix}_${new_id}`;
+    e.classList.add("font-bold");
+}
+
+function txtDecorationH4(e) {
+    e.classList.add("underline");
+    e.classList.add("decoration-greyPerso");
+}
+
 function creatElementWithContent(parentId, typeNewElement, content, idLoop, objectkey) {
     const ELEMENT = createNewElement(typeNewElement)
 
@@ -29,6 +59,7 @@ function creatElementWithContent(parentId, typeNewElement, content, idLoop, obje
     const IN_OBTENTION_FALSE = IN_P_IN_LEARN && content === false;
 
     const IN_SPAN_IN_LEARN = IN_SPAN && parentId.split("_")[0] === "learn";
+
     const IN_LOC = objectkey === "loc";
     const IN_DATE = objectkey === "dates";
     const IN_DATE_JOB = IN_DATE && parentId.split("_")[0] === "job";
@@ -36,23 +67,17 @@ function creatElementWithContent(parentId, typeNewElement, content, idLoop, obje
     const NEW_ID = `${objectkey}_${idLoop}`;
 
     if (IN_DIV_editLearn) {
-        ELEMENT.id = `learn_${NEW_ID}`;
-        ELEMENT.classList.add("margin-3pxt-3pxb");
-        ELEMENT.classList.add("breakForPrint");
+        creatContentOneLearning(ELEMENT, NEW_ID);
     }
 
     if (IN_DIV_editXp) {
-        ELEMENT.id = `job_${NEW_ID}`;
-        ELEMENT.classList.add("breakForPrint");
-        addPaddingJob(ELEMENT);
+        creatContentOneJob(ELEMENT, NEW_ID);
     }
 
     if (IN_H4) {
-        ELEMENT.id = `span_${NEW_ID}`;
-        ELEMENT.classList.add("font-bold");
+        creatTitleH4(ELEMENT, NEW_ID, 'h4');
         if (IN_H4_IN_JOB) {
-            ELEMENT.classList.add("underline");
-            ELEMENT.classList.add("decoration-greyPerso");
+            txtDecorationH4(ELEMENT);
         }
     }
 
@@ -79,18 +104,18 @@ function creatElementWithContent(parentId, typeNewElement, content, idLoop, obje
         }
     }
 
-    if (IN_OBTENTION_TRUE) {
-        ELEMENT.id = `${parentId}_${idLoop}`;
-        ELEMENT.classList.add("obtention");
-        addContentNewElement(ELEMENT, "obtention");
-        return document.getElementById(parentId).appendChild(ELEMENT);
-    }
+    // if (IN_OBTENTION_TRUE) {
+    //     ELEMENT.id = `${parentId}_${idLoop}`;
+    //     ELEMENT.classList.add("obtention");
+    //     addContentNewElement(ELEMENT, "obtention");
+    //     return document.getElementById(parentId).appendChild(ELEMENT);
+    // }
 
-    if (IN_OBTENTION_FALSE) {
-        ELEMENT.id = `${parentId}_${idLoop}`;
-        ELEMENT.classList.add("obtention");
-        return document.getElementById(parentId).appendChild(ELEMENT);
-    }
+    // if (IN_OBTENTION_FALSE) {
+    //     ELEMENT.id = `${parentId}_${idLoop}`;
+    //     ELEMENT.classList.add("obtention");
+    //     return document.getElementById(parentId).appendChild(ELEMENT);
+    // }
 
     if (IN_SPAN_IN_LEARN) {
         if (content) {

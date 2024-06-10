@@ -6,13 +6,14 @@ const INFOS = {
     },
     contact: {
         address: {
-            number: "00",
-            streetName: "Nom de Rue",
+            number: "14",
+            streetName: "Avenue de Malherbe",
             zipCode: "38 100",
             city: "Grenoble",
         },
-        phon: "+334 10 02 30 04",
-        mail: "email@email.com",
+        phon: "+336 18 72 06 31",
+        mail: "jeanpaullemonias@gmail.com",
+        CV : "https://jplemonias.github.io/cv2024"
     },
     aboutMe: [
         [
@@ -35,7 +36,7 @@ const INFOS = {
             city: "Grenoble (38)",
             learning: [
                 {
-                    dates: "Xxxx 0000 - Yyyy 0000",
+                    dates: "décembre 2021 - mai 2023",
                     degree: "RNCP Nv5 technicien développeur.",
                     Languages: [
                         '<i class="fa-brands fa-java"></i>',
@@ -66,12 +67,12 @@ const INFOS = {
                 {
                     dates: "fin 2o19 - Juin 2021",
                     degree: "acquérir de nouvelles connaissances en vue de devenir WebDev.",
-                    optention: [
-                        "Utilisation de:",
-                        '<i class="fa fa-code text-darkGreenPerso p-pr5px" aria-hidden="true"></i>VisualStudioCode',
-                        '<i class="fa-brands fa-github text-darkGreenPerso p-pr5px"></i> GitHub',
-                        '<i class="fa fa-clipboard text-darkGreenPerso p-pr5px" aria-hidden="true"></i> WAMP / LAMP',
-                        '<i class="fa fa-server text-darkGreenPerso p-pr5px" aria-hidden="true"></i> MySQL',
+                    Languages: [
+                        "Utilisation de: <br>",
+                        '<i class="fa fa-code text-darkGreenPerso p-pr5px" aria-hidden="true"></i>VisualStudioCode <br>',
+                        '<i class="fa-brands fa-github text-darkGreenPerso p-pr5px"></i> GitHub <br>',
+                        '<i class="fa fa-clipboard text-darkGreenPerso p-pr5px" aria-hidden="true"></i> WAMP / LAMP <br>',
+                        '<i class="fa fa-server text-darkGreenPerso p-pr5px" aria-hidden="true"></i> MySQL <br>',
                         '<i class="fa fa-language text-darkGreenPerso p-pr5px" aria-hidden="true"></i><i class="fa-brands fa-html5" title="HTML-5"></i> <i class="fa-brands fa-css3-alt" title="CSS-3"></i> <i class="fa-brands fa-js" title="JavaScript"> <i class="fa-brands fa-php" title="PHP"></i></i>'
                     ]
                 }
@@ -127,13 +128,21 @@ const INFOS = {
             lvl: 2
         },
         {
-            titled: 'test',
-            lvl: 0
+            titled: 'SQL',
+            lvl: 1.5
         },
         {
             titled: 'obtention d\'un CONSUEL',
             lvl: ['Maison personnel']
         },
+        {
+            titled: 'Français',
+            lvl: 4.5
+        },
+        {
+            titled: 'Anglais',
+            lvl: 1.5
+        }
     ]
 };
 
@@ -143,6 +152,7 @@ const GET_ME_IMG = GET_E_ID_ME.getElementsByTagName("img");
 const GET_E_ID_FULLNAME = document.getElementById("fullName");
 const GET_E_ID_ADDRESS = document.getElementById("address");
 const GET_E_ID_CORRESPONDANCE = document.getElementById("correspondence");
+const GET_E_ID_CV = document.getElementById("cv_link");
 
 const GET_E_ID_ABOUT_ME = document.getElementById("about_me");
 const GET_ABOUT_ME_DIV = GET_E_ID_ABOUT_ME.getElementsByTagName("div");
@@ -150,19 +160,20 @@ const GET_ABOUT_ME_DIV = GET_E_ID_ABOUT_ME.getElementsByTagName("div");
 const GET_E_ID_SKILLS = document.getElementById("skills");
 const GET_SKILLS_DIV = GET_E_ID_SKILLS.getElementsByTagName("div");
 
+GET_E_ID_SKILLS.classList.add("breakForPrint");
 
 function returnSrcImgStr() {
     return `./public/img/${INFOS.pp}`
 };
 
 function returnFullNameStr() {
-    return `${INFOS.fullName.name} ${INFOS.fullName.firstName}`;
+    return `${INFOS.fullName.name} <span style="white-space: nowrap;">${INFOS.fullName.firstName}<span>`;
 };
 
 function returnFullAddressStr() {
     const STREET = `${INFOS.contact.address.number} ${INFOS.contact.address.streetName}`;
     const ZIPCITY = `${INFOS.contact.address.zipCode} ${INFOS.contact.address.city}`;
-    return `<i class="fa fa-home" aria-hidden="true"></i><p>${STREET}</p><p>${ZIPCITY}</p>`;
+    return `<p><i class="fa fa-home" aria-hidden="true"> : </i>${STREET}</p><p><i class="fa fa-home transparent" aria-hidden="true"> : </i>${ZIPCITY}</p>`;
 };
 
 function returnFullCorrespondenceStr() {
@@ -171,6 +182,11 @@ function returnFullCorrespondenceStr() {
 
     return `${pPhon}${pMail}`;
 };
+
+function returnFullCVStr() {
+    return `<p><i class="fa-regular fa-file-lines" aria-hidden="true"></i> : ${INFOS.contact.CV}</p>`;
+};
+
 
 function returnPForAboutMeStr(e) {
     let str = `<p>`;
@@ -251,6 +267,7 @@ function creatSkills(e) {
 GET_E_ID_FULLNAME.innerHTML = returnFullNameStr();
 GET_E_ID_ADDRESS.innerHTML = returnFullAddressStr();
 GET_E_ID_CORRESPONDANCE.innerHTML = returnFullCorrespondenceStr();
+GET_E_ID_CV.innerHTML = returnFullCVStr();
 GET_ABOUT_ME_DIV[0].innerHTML = returnAboutMeStr();
 GET_SKILLS_DIV[0].innerHTML = returnSkillsStr();
 GET_ME_IMG[0].src = returnSrcImgStr();
@@ -262,21 +279,21 @@ function creatLearn(id, INFOlearning) {
         if (INFOlearning[i].Languages) {
             creatElementWithContent(id, "p", creatLanguages(INFOlearning[i].Languages));
         }
-        optentionCheckingType(id, INFOlearning[i], i)
+        // optentionCheckingType(id, INFOlearning[i], i)
     }
 };
 
-function optentionCheckingType(id, INFOlearning, i) {
-    if (typeof INFOlearning.optention === "object") {
-        return creatLearningArray(id, INFOlearning.optention)
-    } else {
-        creatElementWithContent(id, "p", INFOlearning.optention, i);
-        if (!INFOlearning.optention) {
-            creatElementWithContent(`${id}_${i}`, "del", "obtention", i);
-        }
-    }
-    return creatElementWithContent(`${id}_${i}`, "span", INFOlearning.optention, i);
-};
+// function optentionCheckingType(id, INFOlearning, i) {
+//     if (typeof INFOlearning.optention === "object") {
+//         return creatLearningArray(id, INFOlearning.optention)
+//     } else {
+//         creatElementWithContent(id, "p", INFOlearning.optention, i);
+//         if (!INFOlearning.optention) {
+//             creatElementWithContent(`${id}_${i}`, "del", "obtention", i);
+//         }
+//     }
+//     return creatElementWithContent(`${id}_${i}`, "span", INFOlearning.optention, i);
+// };
 
 function creatLearningArray(id, INFOlearning) {
     for (let i = 0; i < INFOlearning.length; i++) {
@@ -298,15 +315,13 @@ function creatLearning() {
         const TITLE = INFO.institution;
         const LEARN = TITLE.split(" ")[0];
         const ID = `learn_${LEARN}_${i}`;
-        const ID_SPAN = `span_${LEARN}_${i}`;
+        const ID_PARENT_SPAN = `h4_${LEARN}_${i}`;
         creatElementWithContent("editLearn", "div", "", i, LEARN);
+        creatElementWithContent(ID, "h4", `${TITLE} `, i, LEARN);
 
         if (INFO.city.length > 0) {
-            creatElementWithContent(ID, "h4", `${TITLE} `, i, LEARN);
-            creatElementWithContent(ID_SPAN, "span", INFO.city);
-        } else {
-            creatElementWithContent(ID, "h4", TITLE);
-        }
+            creatElementWithContent(ID_PARENT_SPAN, "span", INFO.city);
+        } 
 
         creatLearn(ID, INFO.learning);
     }

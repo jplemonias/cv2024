@@ -86,7 +86,7 @@ const JOBS = {
             companyLoc: "Les Abrets (38)",
             dates: "septembre 2015 - septembre 2016",
             tasks: [
-                "Pose, raccordement et mise en service de compteur, disjoncteur, CIBE, RMBT et caetera..."
+                "Pose, raccordement et mise en service de compteur, disjoncteur, CIBE, RMBT et autre"
             ],
             loc: "Régions Savoie (73), Haute-Savoie (74)"
         },
@@ -96,16 +96,16 @@ const JOBS = {
             companyLoc: "Eybens (38)",
             dates: "2007 - 2015 (8 ans)",
             tasks: [
-                "- Secteur principal: Soutraitance pour CHUBB sécurité / SICLI.",
-                "Installation pose et raccordement de matériel de prévention d’incendie.",
-                "Centrale incendie, détecteurs, système d'extinction Autonome...",
-                "Lecture de plan, étude de cheminement, réalisation, mise en service.",
-                "Travaux en hauteur, utilisation régulière de PEMP.",
-                "Travaux dans locaux dit à risque.",
-                "Respect des consignes EHS.",
-                "- Remise en conformité d’hôtel de station: Pour un promoteur de voyage touristique Anglais.",
-                "Vérification de points remise aux normes demandé par le bureau de contrôle.",
-                "- Réalisation d'ouvrages électriques généraux, d'ordre domestique et tertiaire."
+                "Secteur principal: Soutraitance pour CHUBB sécurité / SICLI.",
+                "- Installation pose et raccordement de matériel de prévention d’incendie.",
+                "- Centrale incendie, détecteurs, système d'extinction Autonome et autre",
+                "- Lecture de plan, étude de cheminement, réalisation, mise en service.",
+                "- Travaux en hauteur, utilisation régulière de PEMP.",
+                "- Travaux dans locaux dit à risque.",
+                "- Respect des consignes EHS.",
+                "Secteur secondaire: Réalisation d'ouvrages électriques généraux, d'ordre domestique et tertiaire.",
+                "- Remise en conformité d’hôtel de station, pour un promoteur de voyage touristique Anglais.",
+                "- Vérification de points remise aux normes demandé par le bureau de contrôle."
             ],
             loc: "Régions Isère (38), Savoie (73), Haute-Savoie (74)"
         }
@@ -122,8 +122,7 @@ const JOBS = {
             tasks: [
                 "- manutention,",
                 "- surveillance de ligne en 3-8,",
-                "- ménages d’entreprises d’immeubles,",
-                "- ..."
+                "- ménages d’entreprises d’immeubles,"
             ],
             loc: "France"
         }
@@ -133,12 +132,8 @@ const JOBS = {
 const PREV = document.querySelector("#prev");
 const NEXT = document.querySelector("#next");
 
-creatElementWithContent("prev", "i", "")
-creatElementWithContent("next", "i", "")
-
-function addPaddingJob(e) {
-    e.style.padding = "10px 0"
-};
+creatElementWithContent("prev", "i", "");
+creatElementWithContent("next", "i", "");
 
 function tasksTxt(t) {
     let str = ``
@@ -159,7 +154,7 @@ function creatExperienceFull() {
 };
 
 function creatCompanySpan(e, i, content) {
-    const ID_FOR_SPAN = `span_${e}_${i}`;
+    const ID_FOR_SPAN = `h4_${e}_${i}`;
     creatElementWithContent(ID_FOR_SPAN, "span", content);
 };
 
