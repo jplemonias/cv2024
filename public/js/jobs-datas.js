@@ -10,7 +10,7 @@ const JOBS = {
             dates: "2022 - 2023",
             tasks: [
                 "En poste chez Schneider Electric (IntenCity).",
-                "- En équipe équipe <strong>Agile (Scrum)</strong> majoritairement basé en Inde.",
+                "- En équipe <strong>Agile (Scrum)</strong> majoritairement basée en Inde.",
                 "- Suivit du cycle de vie de développement logiciel: <strong>Jira</strong>.",
                 "- Développement: <strong>StiboSystems</strong>.",
                 "- Outils: <strong>Visual Studio Code</strong> / <strong>Github</strong>.",
@@ -45,11 +45,11 @@ const JOBS = {
             companyLoc: "Paris (75)",
             dates: "aout 2019 - juin 2o2o",
             tasks: [
-                "Sous traitance pour CIRCET",
+                "Sous-traitance pour CIRCET",
                 "FAI : Free",
                 "",
                 "D3",
-                "- Mêmes taches que chez ND telecom ci-dessous."
+                "- Mêmes tâches que chez ND telecom ci-dessous."
             ],
             loc: "Région Grenobloise, Isère (38)"
         },
@@ -59,12 +59,12 @@ const JOBS = {
             companyLoc: "Panissage (38)",
             dates: "2o16 - 2o17",
             tasks: [
-                " Sous traitance pour Eiffage ENERGIE/CIRCET",
+                " Sous-traitance pour Eiffage ENERGIE/CIRCET",
                 "FAI : Orange et Free",
                 " ",
                 "D3",
                 "- Pose, raccordement et mise en service de PTO.",
-                "- Pose et mise en service de materiel FAI.",
+                "- Pose et mise en service de matériel FAI.",
                 "D2",
                 "- Lecture de plan, tirage de câble",
                 "- Montage et pose PMZ.",
@@ -98,10 +98,10 @@ const JOBS = {
             tasks: [
                 "Secteur principal: Soutraitance pour CHUBB sécurité / SICLI.",
                 "- Installation pose et raccordement de matériel de prévention d’incendie.",
-                "- Centrale incendie, détecteurs, système d'extinction Autonome et autre",
+                "- Centrale incendie, détecteurs, système d'extinction autonome et autre",
                 "- Lecture de plan, étude de cheminement, réalisation, mise en service.",
                 "- Travaux en hauteur, utilisation régulière de PEMP.",
-                "- Travaux dans locaux dit à risque.",
+                "- Travaux dans locaux dits à risque.",
                 "- Respect des consignes EHS.",
                 "Secteur secondaire: Réalisation d'ouvrages électriques généraux, d'ordre domestique et tertiaire.",
                 "- Remise en conformité d’hôtel de station, pour un promoteur de voyage touristique Anglais.",
