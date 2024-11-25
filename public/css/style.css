@@ -38,6 +38,16 @@ ol {
 .visibilityHidden {
     visibility: hidden;
 }
+
+
+.displayNone {
+    display: none!important;
+}
+
+.fontSizeForPrint{
+    font-size: 0.9em;
+}
+
 #contact,
 #formation,
 #skills {
