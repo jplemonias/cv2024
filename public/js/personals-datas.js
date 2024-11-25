@@ -26,7 +26,7 @@ const INFOS = {
             "L'intérêt confirmé et afin d'étayer solidement mon avenir professionnel dans ce domaine.",
         ],
         [
-            "Je me suis alors orienté vers deux formations RNCP 5 une full stack Javascript et une portant sur plus amples langages.",
+            "Je me suis alors orienté vers deux formations RNCP 5 une full stack JavaScript et une portant sur plus amples langages.",
             "Cette dernière en alternance pour une mise en pratique de l'investissement d'apprentissage."
         ]
     ],
