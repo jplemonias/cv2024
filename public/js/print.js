@@ -14,7 +14,7 @@ function ready() {
     const cv_link_p_node = cv_link.querySelector("p");
     const cv_link_p_txt = cv_link_p[0].innerText;
     const cv_link_p_txt_print = cv_link_p_txt.replace(re, "");
-    console.log(mail)
+    
     window.onbeforeprint = function () {
         alert(msg);
         // if (count === 5) {
